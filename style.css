@@ -4,16 +4,28 @@
     font-weight: normal;
     font-style: normal;
 }
+@font-face {
+    font-family: 'Bookman';
+    src: url('Bookman.otf');
+}
 body {
-    font-family: 'Apple Chancery', Arial, sans-serif;
     background-color: #f2f2f2;
 }
 
 h1 {
     margin: 0px;
     font-size: 80px;
+    font-family: 'Apple Chancery', Arial, sans-serif;
 }
 h5 {
     margin-left: 10px;
     margin-top: -20px;
+    font-family: 'Apple Chancery', Arial, sans-serif;
+}
+p {
+    font-family: 'Bookman';
 }     
+h3 {
+    font-family: 'Bookman';
+    text-align: center;
+}
