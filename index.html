@@ -49,13 +49,14 @@
         }
         #menu ul li{
 	        border-bottom: 1px solid;
-	        padding: 10%;/*just to add some spacing between list items*/
+	        padding: 0%;/*just to add some spacing between list items*/
         }
         #menu ul li a{
 	        text-decoration:none;/*to disable the default underlining of achor elements*/
 	        color:#000;
 	        display:block;
 	        text-align:center;
+            font-size: 97%;
 	    }
 
         #sidebar {
@@ -66,30 +67,17 @@
             align-items: flex-end;
         }
 
-        #sidebar b {
-            text-decoration: none;
-            color: rgb(92, 35, 35);
-            border-radius: 4px;
-            transition: background-color 0.3s;
-            margin: 15px 10px;
-            padding: 2px;
-            font-family: 'Apple Chancery', Arial, sans-serif;
-        }
         #sidebar a {
-            font-size: 97%;
             text-decoration: none;
             color: rgb(92, 35, 35);
-            border-radius: 3px;
+            border-radius: 5px;
             transition: background-color 0.3s;
-            margin: 5px;
+            margin: 20px 3px;
             padding: 2px;
             font-family: 'Apple Chancery', Arial, sans-serif;
         }
 
         #sidebar a:hover {
-            background-color: #e9d3d3;
-        }
-        #sidebar b:hover {
             background-color: #e9d3d3;
         }
     </style>
@@ -123,14 +111,14 @@
 <body> 
     <div id="sidebar">
     <div id="menu"> 
-        <b href="#" onclick="loadContent('home.html')">Home</b>
-        <li onclick=display("writingsmenu")><b href="#">Writings</b> 
+        <a href="#home" onclick="loadContent('home.html')">Home</a>
+        <li onclick="display('writingsmenu')"><a href="#">Writings</a> 
         <ul  style="display:none" id="writingsmenu" class="menu">
-        <li><a href="#"onclick="loadContent('poetry.html')" >Poetry</a></li>
-        <li><a href="#"onclick="loadContent('opinion.html')">Opinion</a></li>
+        <li><a href="#poetry"onclick="loadContent('poetry.html');display('writingsmenu')">Poetry</a></li>
+        <li><a href="#journal"onclick="loadContent('journal.html');display('writingsmenu')">Journal</a></li>
          </ul>
         </li>
-        <b href="#" onclick="loadContent('demos.html')">Demos</b>
+        <a href="#" onclick="loadContent('demos.html')">Demos</a>
     </div>
     </div>
     <div id="container">
