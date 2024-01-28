@@ -10,6 +10,11 @@
 }
 body {
     background-color: #f2f2f2;
+    cursor: url('defaultmouse.png'), auto;
+}
+
+body:hover {
+    cursor: url('hovermouse.png'), auto;
 }
 
 h1 {

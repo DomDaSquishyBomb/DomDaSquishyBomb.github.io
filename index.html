@@ -21,9 +21,6 @@
             background-color: #f2f2f2;
         }
 
-        
-
-
         #container {
             display: flex;
             overflow: auto;
@@ -45,15 +42,31 @@
             padding-bottom: 20px;
             align-items: center;
         }
+        #menu ul{
+	        list-style-type:none;/*to disable the bullets that appear in lists*/
+	        padding-left:0px;/*to disable list paddings on the left side*/
+	        margin-left:-2px;
+        }
+        #menu ul li{
+	        border-bottom: 1px solid;
+	        padding: 10%;/*just to add some spacing between list items*/
+        }
+        #menu ul li a{
+	        text-decoration:none;/*to disable the default underlining of achor elements*/
+	        color:#000;
+	        display:block;
+	        text-align:center;
+	    }
 
         #sidebar {
-            width: fit-content;
+            list-style-type:none;
+            width:fit-content;
             display: flex;
             flex-direction: column;
             align-items: flex-end;
         }
 
-        #sidebar a {
+        #sidebar b {
             text-decoration: none;
             color: rgb(92, 35, 35);
             border-radius: 4px;
@@ -62,12 +75,34 @@
             padding: 2px;
             font-family: 'Apple Chancery', Arial, sans-serif;
         }
+        #sidebar a {
+            font-size: 97%;
+            text-decoration: none;
+            color: rgb(92, 35, 35);
+            border-radius: 3px;
+            transition: background-color 0.3s;
+            margin: 5px;
+            padding: 2px;
+            font-family: 'Apple Chancery', Arial, sans-serif;
+        }
 
         #sidebar a:hover {
             background-color: #e9d3d3;
         }
+        #sidebar b:hover {
+            background-color: #e9d3d3;
+        }
     </style>
     <script>
+        function display(id){ /*this javascript function displays the submenu or hides it depending upon its pevious conditon.
+	    It has a single argument, id of the element*/
+	    node=document.getElementById(id);/*get the element's id which called this function and save it in the variable 'node'*/
+	
+	    if(node.style.display=="none")/*loop to check the previous display condition and hide or display it then*/
+		    node.style.display="inline";/*making the menu visible*/
+	    else
+		    node.style.display="none";/*making the menu hide*/
+	    }
         function loadContent(page) {
             fetch(page)
                 .then(response => response.text())
@@ -88,12 +123,16 @@
 <body> 
     <div id="sidebar">
     <div id="menu"> 
-        <a href="#" onclick="loadContent('home.html')">Home</a>
-        <a href="#" onclick="loadContent('writings.html')">Writings</a>
-        <a href="#" onclick="loadContent('demos.html')">Demos</a>
+        <b href="#" onclick="loadContent('home.html')">Home</b>
+        <li onclick=display("writingsmenu")><b href="#">Writings</b> 
+        <ul  style="display:none" id="writingsmenu" class="menu">
+        <li><a href="#"onclick="loadContent('poetry.html')" >Poetry</a></li>
+        <li><a href="#"onclick="loadContent('opinion.html')">Opinion</a></li>
+         </ul>
+        </li>
+        <b href="#" onclick="loadContent('demos.html')">Demos</b>
     </div>
     </div>
-
     <div id="container">
         <div id="content">
         </div>    

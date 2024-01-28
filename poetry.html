@@ -6,16 +6,6 @@
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <link rel="stylesheet" href="style.css" type="text/css">
     <style>
-        h1 a {
-            color: black;
-            text-decoration: none;
-        }
-        h1 :hover{
-            color: black;
-        }
-        h1 :active{
-            color: black;
-        }
         #box{
             border: 1px;
             border-style: solid;
@@ -32,8 +22,8 @@
             overflow: auto;
             height: 100vh;
             width: 100%;
-            /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
-            /* background-color: white; */
+            /*box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+            background-color: white;  */
         }
         #topbar {
             width: fit-content;
@@ -61,27 +51,6 @@
         
     </style>
     <script>
-        function convertTextFileToParagraphs(filePath) {
-        const contentContainer = document.getElementById('content');
-
-        // Fetch the text file
-        fetch(filePath)
-            .then(response => response.text())
-            .then(textContent => {
-                // Split the text content into paragraphs (assuming each line is a paragraph)
-                const paragraphs = textContent.split('\n');
-
-                // Create a <p> element for each paragraph and append it to the container
-                paragraphs.forEach(paragraph => {
-                    const pElement = document.createElement('p');
-                    pElement.textContent = paragraph;
-                    contentContainer.appendChild(pElement);
-                });
-            })
-            .catch(error => {
-                console.error('Error fetching or converting text file:', error);
-            });
-        }
 
         function verifyAndCache() {
         // Get the input value
@@ -122,27 +91,71 @@ function checkCachedText(targetString) {
 }
     </script>
     <title>
-        Writings
+        Poetry
     </title>
 </head>
 <body>
     <h1>
-        <a href='writings.html'>Writings</a>
+        Writings
     </h1>
     <h5>
         of Dominic T. Le
     </h5>
-    <div id="topbar">
-        <a href="#"><u>daily</u></a>
-        <a href="#"><u>poetry</u></a>
-        <a href="#"><u>opinion</u></a>
-    </div>
     <div id="container">
         <div id="content">
+            <div id ="box">
+                <h3>Inspiration for Spring</h3>
+                <p>
+                Sep 26 2023 <br> <br>
+                The sand send its mixed messaging <br>
+                Does everything you think not punish me <br>
+                This city’s so tall but it’s beautiful to have stars replaced with hi hats ringing right in-front of my face <br>
+                Non of my plans have a planner, youre from the midwest and we met to celebrate we will take neither each other’s breath <br>
+                I’ve tried to cry and I’ve tried to hide, there is everything in nothing is not winning, you doofus <br>
+                Demoralized by humankind, he sits on top of his mattress <br>
+                life in a box belong to the way his neighbors talk <br>
+                they’re too afraid to stop the alarm <br>
+                There will be answers in my life <br>
+                </p>
+            </div>
+            <div id="box">
+                <h3>Old Intentions</h3>
+                <p>Aug 16 2023 <br> <br>
+                Between every transition is love <br>
+                What is love if not anticipation <br>
+                What is anticipation if not expecting good <br>
+                ‘Follow your heart’ <br>
+                All I ever wanted was to be good <br>
+                </p>
+            </div>
+
+            <div id="box">
             <h3>Sharp as an Object</h3>
-            <script>
-                convertTextFileToParagraphs('writings/Sharp as an Object.txt')
-            </script>
+            <p>Apr 9 2023 <br> <br> 
+                It was the colour of shellac <br>
+                That fattest test was the final <br>
+                She wrote a larger request <br>
+                The Doc was leaving tomorrow <br>
+                <br>
+                How long of waiting do I get <br>
+                Whispered the soilless houseplants <br>
+                Before the girl gets the dirt on us <br>
+                <br>
+                My friends asked them for help <br>
+                He tripped and he crawled to the front desk <br>
+                He prayed theyd still see him again <br>
+                This is the current state of our hometown <br>
+                Youd think hed stop believing it <br>
+                Start at the heart like a little kid <br>
+                His star like eyes to dig into it <br>
+                Pull out the knife poc kids pocket <br>
+                <br>
+                How long of waiting do I get <br>
+                Whispered the soilless houseplants <br>
+                No use in drinking my sweat <br>
+                Unless watching are dirty guests</p>
+                </div>
+                
         </div>    
     </div>
     <input type="text" id="textInput" placeholder= "cheat codes" onkeydown="handleKeyPress(event)">
