@@ -3,35 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <link rel="stylesheet" href="style.css" type="text/css">
     <style>
-        #box{
+        box{
             border: 1px;
             border-style: solid;
             margin: 10px;
             display: block;
         }
-        #text{
+        text{
             display: flex;
             margin-top: -10px;
             margin-left: 5px;
         }
-        #container {
+        container {
             display: flex;
-            overflow: auto;
+            overflow:auto;
             height: 100vh;
             width: 100%;
+            flex-direction: column;
             /*box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
             background-color: white;  */
         }
-        #topbar {
+        topbar {
             width: fit-content;
             display: flex;
             flex-direction: rox;
             align-items: flex-end;
         }
-        #topbar a {
+        topbar a {
             text-decoration: none;
             color: rgb(0, 0, 0);
             border-radius: 4px;
@@ -39,6 +39,9 @@
             margin: 15px 10px;
             padding: 2px;
             font-family: 'Apple Chancery', Arial, sans-serif;
+        }
+        button{
+            border: 10%;
         }
     
         input {
@@ -49,47 +52,8 @@
             border-inline-color: purple;
         }
         
+        
     </style>
-    <script>
-
-        function verifyAndCache() {
-        // Get the input value
-        var inputValue = document.getElementById('textInput').value;
-
-        // Check if the input is not empty
-        if (inputValue.trim() !== '') {
-        // Retrieve the array of cached strings from localStorage
-        var cachedStrings = JSON.parse(localStorage.getItem('cachedStrings')) || [];
-
-        // Check if the input value is not already in the array
-        if (!cachedStrings.includes(inputValue)) {
-            // Add the input value to the array
-            cachedStrings.push(inputValue);
-
-            // Save the updated array to localStorage
-            localStorage.setItem('cachedStrings', JSON.stringify(cachedStrings));
-
-            alert('Text has been saved to the browser cache!');
-        } else {
-            alert('Text is already cached.');
-        }
-    } else {
-        alert('Input cannot be empty.');
-    }
-    }      
-
-function checkCachedText(targetString) {
-    // Retrieve the array of cached strings from localStorage
-    var cachedStrings = JSON.parse(localStorage.getItem('cachedStrings')) || [];
-
-    // Check if the target string is in the array
-    if (cachedStrings.includes(targetString)) {
-        alert('Text "' + targetString + '" is cached in the browser!');
-    } else {
-        alert('Text "' + targetString + '" is not cached in the browser.');
-    }
-}
-    </script>
     <title>
         Poetry
     </title>
@@ -101,35 +65,45 @@ function checkCachedText(targetString) {
     <h5>
         of Dominic T. Le
     </h5>
-    <div id="container">
-        <div id="content">
-            <div id ="box">
-                <h3>Inspiration for Spring</h3>
+    <container>
+           <box id="febtwonine">
+                <h3>Best of Feb 29</h3>
+                <p>
+                Feb 29 2024 <br> <br>
+                Back then, I wished porn to be real. <br>
+                Now, in the day, I wish I was still twice the age of David Suzuki's grandkid. <br>
+                <br>
+                Sympathy is never my strong suit - I will be sad with you - I will not pause what I see on Earth - Be upset that I'm not you all you want - There No Way You Can't Hear Me - I won't disagree. <br> 
+                <br>
+                Come to the Punk Show, Thomas. You need to see me now. <br>
+                </p>
+            </box>
+            <box id="springy">
+                <h3>Inspiration for Springy</h3>
                 <p>
                 Sep 26 2023 <br> <br>
                 The sand send its mixed messaging <br>
                 Does everything you think not punish me <br>
-                This city’s so tall but it’s beautiful to have stars replaced with hi hats ringing right in-front of my face <br>
-                Non of my plans have a planner, youre from the midwest and we met to celebrate we will take neither each other’s breath <br>
-                I’ve tried to cry and I’ve tried to hide, there is everything in nothing is not winning, you doofus <br>
+                This city`s so tall but it`s beautiful to have stars replaced with hi-hats ringing right in-front of my face <br>
+                None of my plans have a planner, you're from the midwest and we met to celebrate we will take neither each other`s breath <br>
+                I`ve tried to cry and I`ve tried to hide, there is everything in nothing is not winning, you doofus <br>
                 Demoralized by humankind, he sits on top of his mattress <br>
-                life in a box belong to the way his neighbors talk <br>
-                they’re too afraid to stop the alarm <br>
+                life in a box belongs to the way his neighbors talk <br>
+                they`re too afraid to stop the alarm <br>
                 There will be answers in my life <br>
                 </p>
-            </div>
-            <div id="box">
+            </box>
+            <box id="old">
                 <h3>Old Intentions</h3>
                 <p>Aug 16 2023 <br> <br>
                 Between every transition is love <br>
-                What is love if not anticipation <br>
+                'What is love if not anticipation' <br>
                 What is anticipation if not expecting good <br>
-                ‘Follow your heart’ <br>
-                All I ever wanted was to be good <br>
-                </p>
-            </div>
-
-            <div id="box">
+                `Follow your heart` <br>
+                Want only suffices to be good enough <br>
+                </p> 
+            </box>
+            <box id="sharp">
             <h3>Sharp as an Object</h3>
             <p>Apr 9 2023 <br> <br> 
                 It was the colour of shellac <br>
@@ -154,10 +128,7 @@ function checkCachedText(targetString) {
                 Whispered the soilless houseplants <br>
                 No use in drinking my sweat <br>
                 Unless watching are dirty guests</p>
-                </div>
-                
-        </div>    
-    </div>
-    <input type="text" id="textInput" placeholder= "cheat codes" onkeydown="handleKeyPress(event)">
+                </box>
+    </container>
 </body>
 </html>

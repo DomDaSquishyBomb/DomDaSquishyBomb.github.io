@@ -17,11 +17,12 @@
             margin-top: -10px;
             margin-left: 5px;
         }
-        #container {
+        container {
             display: flex;
             overflow: auto;
             height: 100vh;
             width: 100%;
+            flex-direction: column;
             /*box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
             background-color: white;  */
         }
@@ -50,46 +51,6 @@
         }
         
     </style>
-    <script>
-
-        function verifyAndCache() {
-        // Get the input value
-        var inputValue = document.getElementById('textInput').value;
-
-        // Check if the input is not empty
-        if (inputValue.trim() !== '') {
-        // Retrieve the array of cached strings from localStorage
-        var cachedStrings = JSON.parse(localStorage.getItem('cachedStrings')) || [];
-
-        // Check if the input value is not already in the array
-        if (!cachedStrings.includes(inputValue)) {
-            // Add the input value to the array
-            cachedStrings.push(inputValue);
-
-            // Save the updated array to localStorage
-            localStorage.setItem('cachedStrings', JSON.stringify(cachedStrings));
-
-            alert('Text has been saved to the browser cache!');
-        } else {
-            alert('Text is already cached.');
-        }
-    } else {
-        alert('Input cannot be empty.');
-    }
-    }      
-
-function checkCachedText(targetString) {
-    // Retrieve the array of cached strings from localStorage
-    var cachedStrings = JSON.parse(localStorage.getItem('cachedStrings')) || [];
-
-    // Check if the target string is in the array
-    if (cachedStrings.includes(targetString)) {
-        alert('Text "' + targetString + '" is cached in the browser!');
-    } else {
-        alert('Text "' + targetString + '" is not cached in the browser.');
-    }
-}
-    </script>
     <title>
         Opinion
     </title>
@@ -101,61 +62,14 @@ function checkCachedText(targetString) {
     <h5>
         of Dominic T. Le
     </h5>
-    <div id="container">
-        <div id="content">
-            <div id="box">
-                <h3>Internet</h3>
-                <p>Nov 11 2023 <br>
-                    <br>
-                    Life: <br>
-                    Life experiences is the most beautiful thing humans can grasp because it encompasses everything humans can grasp: it's in the definition of life experiences. I'm not saying your life or experience is to you beautiful, I'm not saying life can't be bad. I'm saying life in its totality is necessarily beautiful. This is not some existential emo talk, I don't mean to contrast it with death since the death we fear and compare to life, we only quantify through our meanings and metaphors. Death is not real until we feel nothing. Life is real, and we always feel it. I don't even mean to use logic, I want to hypnotize you into this foundational ___ . In this sense you can apply whatever description you can think of to life and for me, the word that sees all human feeling is beauty. <br>
-                    <br>
-                    I keep on saying this and I keep on saying this because it makes me happy and grateful and optimistic and more willing to enjoy life's experiences. <br>
-                    <br>
-                    Why the internet is awesome: <br>
-                    1. It's different <br>
-                    I hate that I feel so much all the time, it's so beautiful, yet sometimes I want to just focus on one thing. Since the brain likes to collect useful patterns (typicality effect), great dissectional insight can be gained from diversifying intake of differently composed stimuli which all contain your goal essence. Take games: I play chess with my grandpa, I play soccer when I was in elementary school, I play call of duty after christmas. I've enjoyed all of these experiences. I'm happy when I hear games not because I'm expecting call of duty, soccer, or chess, but because I know what a game is and I like games. Take people: I talk to people when I need things, I talk to people because I like them, I talk to people outside, inside of building, I talk to people from different countries, and I talk to people online. I know what I'm getting myself into when I'm talking to people.
-                    The internet's ecosystem is different than real life because currently there does not need to be anything but a screen and inputs. Doing anything on the internet comes with its unique internet bias opposed to real life bias. Within this screen subset, runs branches that might parallel face to face chatter and meet many of its superficial functions like work and catch-up but from its essence of chatter, it may branch out into novel ways of communication such as emojis, memes, and complex social communities.
-                    
-                    Empathy and grit:
-                    With every new dataset, intersections get us a simpler essences. These essences, born from new experiences, are vital to our future predictions. Think about empathy, using your past experiences to help others. Think about grit, using your past experiences to reassure yourself. To be exact I think grit is just the exploitation of past experiences for an over prediction of past experiences, because when we know a current experience is like a past experiences and won't contribute to our essence building, it weighs less because it should have little effect on our future.
-                    
-                    I strive to have a simplest essence for things I love so that I can apply it to as many situations as possible. The internet showed me how to love more people.
-                    
-                    2. It's huge
-                    Not mentioned in the last point but being removed from others bodies talking to them is wholly different. I'm talking sexual desires and all these patterns that we keep that are jagged. Having to consistently associate this jaggedness with communication, which is essentially different, is not correct in ways that lead to depressing sentiments about nothing being pure ... which, 'nothing' is pure...
-                    
-                    Our bodies are beautiful, but that is not what I wanted when I talked to you.
-                    
-                    Because of all these patterns which result in biases, it is unnecessarily difficult to talk about certain things with your average person because their biases might lead to them being disgusted by your unexpected presentation. This is not their fault, they don't choose to be biologically disgusted just like how you didn't choose to be special, disabled, or unexpected. Instead, hating itself, hating others, or waiting to die like a runt, the stubborn mule pinches hope in the fact that there are 9 billion other bodies than the one that rejected them. The mule interfaces others on the mule's computers and fins r/mules. Now, the mule only carries the burdens of it's own mental organization not its body. This is still tough but it's cheaper when you look at how complex the world is with its databanks, and bureaucratic hiring systems for bureaucratic positions. Internet people need to only present themselves a little differently to move thousands of lines of code.
-                    
-                    On the internet, you only need to say one word for one word to be heard.
-                    
-                    On then [[Death of Omegle]].
-                </p>
-            </div>
-
-            <div id="box">
-            <h3>AI psychology</h3>
-            <p>Oct 19 2023 <br>
-                <br>
-                The study of psychology: <br>
-                Understanding our human selves, will be overshadowed by the study of AI psychology: understanding the world, natural and artefact. We can become a part of the machine and continue the study of ourselves with the study of artefacts. This is not novel, we've always had the ability to create things that change ourselves. So in-hand, psychology already studies artefacts and ourselves and nature since we are its product. Can we not make that case for sociology which studies 'social' artefacts and ourselves. In fact, due to our separation from reality, our inarguable reliance on our biological senses, every field studies ourselves, every field studies nature, every field studies artefacts. <br>
-                <br>
-                Distinct <br>
-                How will AI psychology be defined to minimize its intersection with other existing fields. AIP can join another field and use plugins from neighbour fields. It can be composed of many fields. Can it start from scratch? IDK but the ultimately it is not new in field of studying humans, ourselves, or computers because all of those have been studied together. It will be new in that it restricts its distribution of possible subjects of research, to a novel level. For example, we've always been integrating with out technologies even in cases where it decides our vitality but maybe never to the extent or quantity of a brain chip. AI psychology will not be a new scale. It is an example of selective categorization. Why we view as new is the interesting question. <br>
-                <br>
-                Sadness <br>
-                I can't help but think about how many iterations of changes a 'field' must have gone through to be where it is. This lessens my respect for their possible need for rigidity. It speaks to imagery of a relevance pendulum that just keeps on swinging more to the right or left side. We create a tool, it changes our world, we accommodate our tool, it keeps changing the world. Is it that we don't want to go back? Well some of us do. Maybe they are weak? They are fighting the flow of traffic and themselves because they are also a part of the changed world. Mainly it seems impossible to go back. There's no amount of humans right now or in 5 generations that hold steady all of the universes cogs. <br>
-                <br>
-                Because of this constant change of hour humanity and nature, I'm afraid that we will never be able to capture present humanity and until we've finally done it in the future. Future yous and future mes might be able to understand ourselves through a new dominating 'scientific' theory but this instance of me will never get to do that. All instances of my past self will never afford to understand himself. I knew they were lost but I looked forward but now I know that is not possible. <br>
-                <br>
-                Solution <br>
-                Currently this points to my [[criticism of rationality]] where I understand that to prove a large system, we need to eliminate every possibly wrong case. Without pointers or organization of the possible cases, every checked case will follow 'randomly' from each other. We don't do this. Our mind or heart or out gut or whatever gives us a cue. And we follow it. Rational thinkers are nothing without following their intuition. This is not incompatible but hypocritical in a way that leads me to think that following using the strategy that creates the other will be more effective. If this intuition created rational systems and uses rational systems perhaps this intuition is the real agent and rationality is just a framework. It's still very difficult to contend with for our bias towards the results of math, science, and such. Perhaps, in the Platonic sense, we only have an idea of rationality, but like the idea of the world, it ungraspable to us. Even more probable, what if the domain of rationality is a concept we made up out of our intuition. Do we like animal not act to survive, an animal cannot constantly cope with its changing world but we can because we created the change. Out of desire survival, out of our own slow self harm through innate drive to push ourselves towards more, we use rationality to look in every domain as closely or broadly as possible to find the cure. This is like an existential contradiction. Or maybe this intuition is only not obviously rational. Maybe we are not conscious of our biological predictive processes which are all rational which presents us the best guess as the immediate result. Maybe we can look there, but I want to look within without fear of being wrong, without fear of dying, with nothing but the things at my foremost direction.</p>
-                </div>
-                
-        </div>    
-    </div>
-    <input type="text" id="textInput" placeholder= "cheat codes" onkeydown="handleKeyPress(event)">
+    <container>
+            <box>
+                <h3>Death of Omegle</h3>    
+                <br>        
+                <h1>
+                    Teaser: epic and long awaited monologue about the Death of Omegle.
+                </h1>
+            </box>
+    </container>
 </body>
 </html>
