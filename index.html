@@ -100,16 +100,31 @@
 		    node.style.display="none";/*making the menu hide*/
 	    }
         function loadContent(page) {
-            fetch(page)
-                .then(response => response.text())
-                .then(html => {
-                    document.getElementById('content').innerHTML = html;
-                })
-                .catch(error => {
-                    console.error('Error fetching content:', error);
-                });
-                
-        }
+    fetch(page)
+        .then(response => response.text())
+        .then(html => {
+            const contentElement = document.getElementById('content');
+            contentElement.innerHTML = html;
+
+            // Find and execute scripts
+            Array.from(contentElement.querySelectorAll('script')).forEach(oldScript => {
+                const newScript = document.createElement('script');
+                Array.from(oldScript.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
+                if (oldScript.src) {
+                    // For external scripts, setting the src will automatically fetch and execute them.
+                    newScript.src = oldScript.src;
+                } else {
+                    // For inline scripts, copy the text and create a new script element
+                    newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+                }
+                // Replace the old script with the new one
+                oldScript.parentNode.replaceChild(newScript, oldScript);
+            });
+        })
+        .catch(error => {
+            console.error('Error fetching content:', error);
+        });
+}
         window.onload = function() {
             loadContent('home.html');
         };

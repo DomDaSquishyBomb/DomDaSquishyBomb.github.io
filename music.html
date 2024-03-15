@@ -47,42 +47,68 @@
             text-align: center;
             flex-direction: column;
         }
+        .off {
+            display: none;
+        }
+        .on {
+            display: block;
+        }
         
     </style>
+    <script>
+            function offOn(offSectionId, onSectionId) {
+            var offSection = document.getElementById(offSectionId);
+            var onSection = document.getElementById(onSectionId); 
+
+            // Toggles names
+            offSection.className = 'off';
+            onSection.className = 'on';
+        }
+    </script>
     <title>
-        Poetry
+        Music
     </title>
 </head>
 <body>
-    <h1>
-        Music
-    </h1>
-    <h5>
-        of Dominic T. Le
-    </h5>
-    <p>Music is a big passion of mine! My parents played me a large variety of music they liked throughout my childhood; 
-        My dad took me to guitar lessons at 8; I started writing joke songs when I was 11 and then sad songs when I
-        was 13; And now, I write songs that belong to genres which I will never admit to... Currently I'm in a post-weezercore,
-        garage-esque, post-emo-esque, nature loving band called Derwin. 
-        <br> <br>
-        I used to writes songs for and play in Nanaimo's Space Disco Band. Check out our 2022 album "First Time" on 
-        <a href="https://spacediscoband.bandcamp.com/album/first-time">Bandcamp</a> with lyrics and everything!
-        Also, here's a <a href="https://web.archive.org/web/20220408152833/https://spacediscoband.com/">website</a>
-        I made for the band back in its prime.
-        <br> <br>
-        In compositionally dire times followed by emotional intensity, I publish songs to my <a href="https://soundcloud.com/sincerlyfaithfully">SoundCloud</a>. 
-        Although these emotions are mostly unrelatble to me now, they meant the world to me then, and that's so worth noting. Sometimes, I go by DJ Dinosaurus.
-        <br> <br> 
-        Check out of the music I like!
-        <br> <br>
-        Proof of performances:
-     </p>
-     <photobox style="width: 50%; align-items: center;">
-     <img src="photos/IMG_4992.JPG" alt="Hart House 2023" " style="width: 200px;">
-     <p style="font-size: smaller; ">(DJ Dinosaurus at Hart House Open Mic 2023)</p>
-     </photobox>
-
-     
-
+    <section id="music-home-section", class="on">
+        <h1>
+            Music
+        </h1>
+        <h5>
+            of Dominic T. Le
+        </h5>
+        <p>Music is a big passion of mine! My parents played me a large variety of music they liked throughout my childhood; 
+            My dad took me to guitar lessons at 8; I started writing joke songs when I was 11 and then sad songs when I
+            was 13; And now, I write songs that belong to genres which I will never admit to... Currently I'm in a post-weezercore,
+            garage-esque, post-emo-esque, nature loving band called Derwin. 
+            <br> <br>
+            I used to writes songs for and play in Nanaimo's Space Disco Band. Check out our 2022 album "First Time" on 
+            <a href="https://spacediscoband.bandcamp.com/album/first-time">Bandcamp</a> with lyrics and everything!
+            Also, here's a <a href="https://web.archive.org/web/20220408152833/https://spacediscoband.com/">website</a>
+            I made for the band back in its prime.
+            <br> <br>
+            In compositionally dire times followed by emotional intensity, I publish songs to my <a href="https://soundcloud.com/sincerlyfaithfully">SoundCloud</a>. 
+            Although these emotions are mostly unrelatble to me now, they meant the world to me then, and that's so worth noting. Sometimes, I go by DJ Dinosaurus.
+            <br> <br> 
+            Check out of the <a onclick="offOn('music-home-section','music-like-section')">music I like!</a>
+            <br> <br>
+            Proof of performances:
+         </p>
+         <photobox style="width: 50%; align-items: center;">
+         <img src="photos/IMG_4992.JPG" alt="Hart House 2023" " style="width: 200px;">
+         <p style="font-size: smaller; ">(DJ Dinosaurus at Hart House Open Mic 2023)</p>
+         </photobox>
+    </section>
+    <section id="music-like-section" class="off">
+        <h1 onclick="offOn('music-like-section','music-home-section')">
+            Fav Music
+        </h1>
+        <h5>
+            of Dominic T. Le
+        </h5>
+        <p>
+            Uh.... Probably Flight Patterns.
+        </p>
+    </section>
 </body>
 </html>
