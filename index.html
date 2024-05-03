@@ -129,6 +129,9 @@
         window.onload = function() {
             loadContent('home.html');
         };
+        function popUp(){
+            alert("Mature Themes...Viewer Discretion is Advised")
+        };
     </script>
     <title>Home</title>
 </head>
@@ -139,9 +142,9 @@
         <a href="#research" onclick="loadContent('research.html')">Research</a>
         <ul onclick="display('writingsmenu')"><a href="#">Writings</a> 
         <ul  style="display:none" id="writingsmenu" class="menu">
-        <li><a href="#poetry"onclick="loadContent('poetry.html');display('writingsmenu')">Poetry</a></li>
+        <li><a href="#poetry"onclick="loadContent('poetry.html');display('writingsmenu');popUp()">Poetry</a></li>
         <li><a href="#journal"onclick="loadContent('journal.html');display('writingsmenu')">Journal</a></li>
-        <li><a href="#journal"onclick="loadContent('music.html');display('writingsmenu')">Music</a></li>
+        <li><a href="#music"onclick="loadContent('music.html');display('writingsmenu')">Music</a></li>
          </ul>
         </ul>
     </div>
