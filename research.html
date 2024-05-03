@@ -25,6 +25,12 @@
             flex-direction: column;
             /*box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
             background-color: white;  */
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none; 
+            
+        }
+        container ::-webkit-scrollbar {
+                display: none;
         }
         #topbar {
             width: fit-content;
@@ -49,7 +55,7 @@
             text-align: center;
             border-inline-color: purple;
         }
-        
+
     </style>
     <title>
         Research
