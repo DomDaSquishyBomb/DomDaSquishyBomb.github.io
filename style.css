@@ -21,6 +21,9 @@ h1 {
     font-size: 80px;
     font-family: 'Apple Chancery', Arial, sans-serif;
 }
+h2{
+    font-family: 'Bookman'; 
+}
 h5 {
     margin-left: 10px;
     margin-top: -20px;
