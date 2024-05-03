@@ -132,13 +132,12 @@
             loadContent('home.html');
         };
         function popUp(){
-            if (confirm("Mature Themes...Viewer Discretion is Advised") == true) {
+            if (confirm("Mature Themes...Viewer Discretion is Advised")) {
                 loadContent('poetry.html');
                 display('writingsmenu')
             }
-            else{
-
-            }
+            else
+            display('writingsmenu');
             }
     </script>
 </head>
