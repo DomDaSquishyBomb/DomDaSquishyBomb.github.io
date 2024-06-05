@@ -11,7 +11,8 @@
 body {
     background-color: #f2f2f2;
     cursor: url('Graphics/defaultmouse.png'), auto;
-    overflow: auto;
+    scroll-behavior:smooth;
+    padding: auto;
 }
 a {
     cursor: url('Graphics/hovermouse.png'), auto;
