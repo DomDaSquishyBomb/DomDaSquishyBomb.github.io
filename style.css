@@ -11,7 +11,7 @@
 body {
     background-color: #f2f2f2;
     cursor: url('Graphics/defaultmouse.png'), auto;
-    padding: auto;
+    padding-bottom: 100px;
 }
 a {
     cursor: url('Graphics/hovermouse.png'), auto;
