@@ -32,6 +32,10 @@ nav {
     flex-direction: column;
     align-items: center;
     padding: 0 35px;
+
+    summary {
+        display: block;
+    }
 }
 
 nav a {
