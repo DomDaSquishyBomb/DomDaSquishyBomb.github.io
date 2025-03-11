@@ -1,160 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <title>Dominic T. Le's Personal Website</title>
-    <meta name="description" content="It's here and better than ever!!!!"/>
+    <meta name="description" content="It's here and better than ever!!!!" />
     <meta charset="UTF-8">
-    <link rel="shortcut icon" type="image/jpg" href="Graphics/favicon.ico"/>
+    <link rel="shortcut icon" type="image/jpg" href="Graphics/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css" type="text/css">
     <style>
-        body {
-            max-width: 680px;
-            width: 100%;
-            margin: auto;
-            display: flex;
-            height: 100vh;
-            align-items: center;
-            background-color: #f2f2f2;
-            overflow-y: hidden;
-        }
+      body {
+        max-width: 680px;
+        width: 100%;
+        margin: auto;
+        display: flex;
+        height: 100vh;
+        align-items: center;
+        background-color: #f2f2f2;
+        overflow-y: hidden;
+      }
 
-        #container {
-            display: flex;
-            height: 100vh;
-            width: 100vh;
-            padding: 1%;
-            overflow-y: auto;
-            /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
-            /* background-color: white; */
-        }
+      #container {
+        display: flex;
+        height: 100vh;
+        width: 100vh;
+        padding: 1%;
+        overflow-y: hidden;
+        /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+        /* background-color: white; */
+      }
 
-        #menu {
-            width: fit-content;
-            background: #98dd9c;
-            height: fit-content;
-            border-radius: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            padding-top: 35px;
-            padding-bottom: 35px;
-            align-items: center;
-        }
-        #menu ul{
-	        list-style-type:none;/*to disable the bullets that appear in lists*/
-            text-decoration: none;
-            color: rgb(92, 35, 35);
-            border-radius: 5px;
-            transition: background-color 0.3s;
-            margin: 15px 3px;
-            padding: 2px;
-            font-family: 'Apple Chancery', Arial, sans-serif;
-        }
-        #menu ul li{
-	        border-bottom: 1px solid;
-	        padding: 0%;/*just to add some spacing between list items*/
-        }
-        #menu ul li a{
-	        text-decoration:none;/*to disable the default underlining of achor elements*/
-	        color:#000;
-	        display:block;
-	        text-align:center;
-            font-size: 97%;
-            margin-top: 25%;
-            margin-bottom: 25%
-	    }
+      #menu {
+        width: fit-content;
+        background: #98dd9c;
+        height: fit-content;
+        border-radius: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-top: 35px;
+        padding-bottom: 35px;
+        align-items: center;
+      }
 
-        #sidebar {
-            list-style-type:none;
-            width:fit-content;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-        }
+      #menu ul {
+        list-style-type: none; /* disable the bullets */
+        text-decoration: none;
+        color: rgb(92, 35, 35);
+        border-radius: 5px;
+        transition: background-color 0.3s;
+        margin: 15px 3px;
+        padding: 2px;
+        font-family: 'Apple Chancery', Arial, sans-serif;
+      }
 
-        #sidebar a {
-            text-decoration: none;
-            color: rgb(92, 35, 35);
-            border-radius: 5px;
-            transition: background-color 0.3s;
-            margin: 15px 3px;
-            padding: 2px;
-            font-family: 'Apple Chancery', Arial, sans-serif;
-        }
+      #menu ul li {
+        border-bottom: 1px solid;
+        padding: 0; /* spacing between list items */
+      }
 
-        #sidebar a:hover {
-            background-color: #e9d3d3;
-        }
+      #menu ul li a {
+        text-decoration: none; /* disable default underlining */
+        color: #000;
+        display: block;
+        text-align: center;
+        font-size: 97%;
+        margin-top: 25%;
+        margin-bottom: 25%;
+      }
+
+      #sidebar {
+        list-style-type: none;
+        width: fit-content;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+      }
+
+      #sidebar a {
+        text-decoration: none;
+        color: rgb(92, 35, 35);
+        border-radius: 5px;
+        transition: background-color 0.3s;
+        margin: 15px 3px;
+        padding: 2px;
+        font-family: 'Apple Chancery', Arial, sans-serif;
+      }
+
+      #sidebar a:hover {
+        background-color: #e9d3d3;
+      }
     </style>
     <script>
-        function display(id){ /*this javascript function displays the submenu or hides it depending upon its pevious conditon.
-	    It has a single argument, id of the element*/
-	    node=document.getElementById(id);/*get the element's id which called this function and save it in the variable 'node'*/
-	
-	    if(node.style.display=="none")/*loop to check the previous display condition and hide or display it then*/
-		    node.style.display="inline";/*making the menu visible*/
-	    else
-		    node.style.display="none";/*making the menu hide*/
-	    }
-        function loadContent(page) {
-    fetch(page)
-        .then(response => response.text())
-        .then(html => {
+      function display(id) {
+        // Toggle the display state of the submenu.
+        var node = document.getElementById(id);
+        if (node.style.display === "none") {
+          node.style.display = "inline";
+        } else {
+          node.style.display = "none";
+        }
+      }
+
+      function loadContent(page) {
+        fetch(page)
+          .then(response => response.text())
+          .then(html => {
             const contentElement = document.getElementById('content');
             contentElement.innerHTML = html;
 
-            // Find and execute scripts
+            // Find and execute scripts within the loaded content.
             Array.from(contentElement.querySelectorAll('script')).forEach(oldScript => {
-                const newScript = document.createElement('script');
-                Array.from(oldScript.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
-                if (oldScript.src) {
-                    // For external scripts, setting the src will automatically fetch and execute them.
-                    newScript.src = oldScript.src;
-                } else {
-                    // For inline scripts, copy the text and create a new script element
-                    newScript.appendChild(document.createTextNode(oldScript.innerHTML));
-                }
-                // Replace the old script with the new one
-                oldScript.parentNode.replaceChild(newScript, oldScript);
+              const newScript = document.createElement('script');
+              Array.from(oldScript.attributes).forEach(attr =>
+                newScript.setAttribute(attr.name, attr.value)
+              );
+              if (oldScript.src) {
+                newScript.src = oldScript.src;
+              } else {
+                newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+              }
+              oldScript.parentNode.replaceChild(newScript, oldScript);
             });
-        })
-        .catch(error => {
+          })
+          .catch(error => {
             console.error('Error fetching content:', error);
-        });
-}
-        window.onload = function() {
-            loadContent('home.html');
-        };
-        function popUp(){
-            if (confirm("Mature Themes...Viewer Discretion is Advised")) {
-                loadContent('poetry.html');
-                display('writingsmenu')
-            }
-            else
-                display('writingsmenu');
-            }
+          });
+      }
+
+      window.onload = function() {
+        loadContent('home.html');
+      };
+
+      function popUp() {
+        if (confirm("Mature Themes...Viewer Discretion is Advised")) {
+          loadContent('poetry.html');
+          display('writingsmenu');
+        } else {
+          display('writingsmenu');
+        }
+      }
     </script>
-</head>
-<body> 
+  </head>
+  <body>
     <div id="sidebar">
-    <div id="menu"> 
+      <div id="menu">
         <a href="#home" onclick="loadContent('home.html')">About</a>
         <a href="#research" onclick="loadContent('research.html')">Research</a>
-        <ul onclick="display('writingsmenu')"><a href="#writings">Writings</a> 
-        <ul  style="display:none" id="writingsmenu" class="menu">
-        <li><a href="#poetry"onclick="popUp()">Poetry</a></li> 
-        <li><a href="#journal"onclick="loadContent('journal.html');display('writingsmenu')">Journal</a></li>
-        <li><a href="#music"onclick="loadContent('music.html');display('writingsmenu')">Music</a></li>
-         </ul>
+        <ul onclick="display('writingsmenu')">
+          <a href="#writings">Writings</a>
+          <ul id="writingsmenu" class="menu" style="display: none;">
+            <li>
+              <a href="#poetry" onclick="popUp()">Poetry</a>
+            </li>
+            <li>
+              <a href="#journal" onclick="loadContent('journal.html'); display('writingsmenu')">Journal</a>
+            </li>
+            <li>
+              <a href="#music" onclick="loadContent('music.html'); display('writingsmenu')">Music</a>
+            </li>
+          </ul>
         </ul>
-    </div>
+      </div>
     </div>
     <div id="container">
-        <div id="content">
-        </div>    
-        
+      <div id="content"></div>
     </div>
-
-</body>
+  </body>
 </html>
