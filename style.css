@@ -35,12 +35,8 @@ nav {
     align-items: center;
     padding: 15px 10px;
     margin: 100px 10px;
-    details {
-        font-size: 90%;
-    }
     summary {
         display: block;
-        font-size: 100%;
     }
 }
 
