@@ -8,6 +8,13 @@
     font-family: 'Bookman';
     src: url('Bookman.otf');
 }
+html {
+    cursor: url('Graphics/defaultmouse.png'), default;
+}
+
+a, button, summary {
+    cursor: url('Graphics/hovermouse.png'), pointer;
+}
 
 body {
     max-width: 680px;
@@ -16,7 +23,6 @@ body {
     display: grid;
     height: 100vh;
     background-color: #f2f2f2;
-    cursor: url('Graphics/defaultmouse.png'), auto;
     grid-template-columns: min-content 100%;
 }
 

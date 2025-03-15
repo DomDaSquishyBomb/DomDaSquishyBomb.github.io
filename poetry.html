@@ -10,11 +10,7 @@
             border-style: solid;
             margin: 10px;
             display: block;
-        }
-        text{
-            display: flex;
-            margin-top: -10px;
-            margin-left: 5px;
+            padding: 10px;
         }
         container {
             display: flex;
@@ -25,34 +21,9 @@
             /*box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
             background-color: white;  */
         }
-        topbar {
-            width: fit-content;
-            display: flex;
-            flex-direction: rox;
-            align-items: flex-end;
+        summary {
+            display: block;
         }
-        topbar a {
-            text-decoration: none;
-            color: rgb(0, 0, 0);
-            border-radius: 4px;
-            transition: background-color 0.3s;
-            margin: 15px 10px;
-            padding: 2px;
-            font-family: 'Apple Chancery', Arial, sans-serif;
-        }
-        button{
-            border: 10%;
-        }
-    
-        input {
-            font-family: 'Apple Chancery', Arial, sans-serif;
-            border: 1px solid #cccccc;
-            border-radius: 100%;
-            text-align: center;
-            border-inline-color: purple;
-        }
-        
-        
     </style>
     <title>
         Poetry
@@ -68,67 +39,78 @@
         </p>
     </hgroup>
    
-    <p>I like to share poems and these are some that I got to read aloud. Be wary, they can be intense!</p>
+    <p>I like to share poems and these are some that I got to read aloud. Click to expand! </p>
     <container>
-              <box id="theplan">
-            <h3>The Plan</h3>
-            <p>
-            April 15 2024 <br> <br>
-            The guardian, spirit, and person: what the fuck happened? <br>
-            The three years it takes to lose everything, <br>
-            the 15 years of holding on to anything that looked like <br>
-            what you saw when you were in my position 30 years ago. <br>
-            I want a family of three and 90 thousand dollars a year; <br>
-            I'll have three favourite colours and three virtues I pass on to my kids; <br>
-            I'll give them simple digestible apt sentences; <br>
-            They'll grow up to be rich, to be old, and they won't need to take care of me. <br>
-            I will deduct from my conduct three ways my parents mistreated me, <br>
-            And I pass it off to the next family tree. <br>
-            I want nothing to do with my future, and I will accept all disease. <br>
-            You will be named three weeks before you are born, <br>
-            and until you are 18, I will lose 1/6 of myself every 3 years. <br> <br>
-            (as read for <a href="https://www.instagram.com/p/C5yiHIULMvk/?igsh=ZG9jZ3cyYTJ1aHI%3D">Toronto Poetry Society</a>)
-            </p>
+            <box id="theplan">
+            <details>
+                <summary>
+                    <h3>The Plan</h3>
+                    <p>April 15 2024</p>
+                </summary>
+                <p>
+                    The guardian, spirit, and person: what the fuck happened? <br>
+                    The three years it takes to lose everything, <br>
+                    the 15 years of holding on to anything that looked like <br>
+                    what you saw when you were in my position 30 years ago. <br>
+                    I want a family of three and 90 thousand dollars a year; <br>
+                    I'll have three favourite colours and three virtues I pass on to my kids; <br>
+                    I'll give them simple digestible apt sentences; <br>
+                    They'll grow up to be rich, to be old, and they won't need to take care of me. <br>
+                    I will deduct from my conduct three ways my parents mistreated me, <br>
+                    And I pass it off to the next family tree. <br>
+                    I want nothing to do with my future, and I will accept all disease. <br>
+                    You will be named three weeks before you are born, <br>
+                    and until you are 18, I will lose 1/6 of myself every 3 years. <br> <br>
+                    (as read for <a href="https://www.instagram.com/p/C5yiHIULMvk/?igsh=ZG9jZ3cyYTJ1aHI%3D">Toronto Poetry Society</a>)
+                    </p>
+            </details>
              </box>
             <box id="fsetcelebrate">
-            <h3>Failiure Set into Inspiration for Celebrate!</h3>
-            <p>
-                April 15 2024 <br> <br>
-                Seething is a piece of your blinding teeth, <br>
-                sliding flyers into pockets, activist creep. <br>
-                Recycle ideas from your failure set. <br>
-                Feel good; feel sad that no one else took care of your pet, <br>
-                I can't think of anything worse to forget. <br>
-                Failure set is the only set that makes no sense. <br>
-                <br>
-                Again, <br>
-                <br>
-                Capitalism overvalues beliefs <br>
-                Which automates the precedence of actions. <br>
-                Distance from parameters allows us to view them as categorically null. <br>
-                The only one responsible is the one casting blame. <br>
-                Of course they'd never win democratically; they're the most special person you've ever <br>
-                met. <br> <br>
-            (as read for <a href="https://www.instagram.com/p/C5yiHIULMvk/?igsh=ZG9jZ3cyYTJ1aHI%3D">Toronto Poetry Society</a>)
-            </p>
+            <details>
+                <summary>
+                    <h3>Failiure Set into Inspiration for Celebrate!</h3>
+                    <p>April 15 2024</p>
+                </summary>
+                <p>
+                    Seething is a piece of your blinding teeth, <br>
+                    sliding flyers into pockets, activist creep. <br>
+                    Recycle ideas from your failure set. <br>
+                    Feel good; feel sad that no one else took care of your pet, <br>
+                    I can't think of anything worse to forget. <br>
+                    Failure set is the only set that makes no sense. <br>
+                    <br>
+                    Again, <br>
+                    <br>
+                    Capitalism overvalues beliefs <br>
+                    Which automates the precedence of actions. <br>
+                    Distance from parameters allows us to view them as categorically null. <br>
+                    The only one responsible is the one casting blame. <br>
+                    Of course they'd never win democratically; they're the most special person you've ever <br>
+                    met. <br> <br>
+                (as read for <a href="https://www.instagram.com/p/C5yiHIULMvk/?igsh=ZG9jZ3cyYTJ1aHI%3D">Toronto Poetry Society</a>)
+            </details>
             </box>
             <box id="whiff">
-                <h3>Whiff</h3>
-                <p>
-                    April 15 2024 <br> <br>
-                    Get a whiff of this, suck sharply. <br>
-                    It's surfacing, dripping down the boundary of your toughness and your close-less <
-                    considerations. <br>
-                    Can I count this even if you never ended happy? <br>
-                    Can we count this even if we never ended? <br>
-                    Sadly, by the fern, the stiffness in your throat with unhurt ego only in shouting. <br>
-                    Was the first, now the third; the gull to be exhausted sunshine's cooldown. <br>
-                    Idiot! What if you sold my clothes or gifted your negativeness. <br>
-                    If you watered your plants, your pets, every precious mayby. <br>
-                    With the last throw; we are close now when sometimes you get to thinking, <br>
-                    Please, from forever yours, can we have together dreams again? <br> <br>
-            (as read for <a href="https://www.instagram.com/p/C5yiHIULMvk/?igsh=ZG9jZ3cyYTJ1aHI%3D">Toronto Poetry Society</a>)
-                </p>
+                <details>
+                    <summary>
+                        <h3>Whiff</h3>
+                        <p>April 15 2024</p>
+                    </summary>
+                    <p>
+                        Get a whiff of this, suck sharply. <br>
+                        It's surfacing, dripping down the boundary of your toughness and your close-less <
+                        considerations. <br>
+                        Can I count this even if you never ended happy? <br>
+                        Can we count this even if we never ended? <br>
+                        Sadly, by the fern, the stiffness in your throat with unhurt ego only in shouting. <br>
+                        Was the first, now the third; the gull to be exhausted sunshine's cooldown. <br>
+                        Idiot! What if you sold my clothes or gifted your negativeness. <br>
+                        If you watered your plants, your pets, every precious mayby. <br>
+                        With the last throw; we are close now when sometimes you get to thinking, <br>
+                        Please, from forever yours, can we have together dreams again? <br> <br>
+                    (as read for <a href="https://www.instagram.com/p/C5yiHIULMvk/?igsh=ZG9jZ3cyYTJ1aHI%3D">Toronto Poetry Society</a>)
+                    </p>
+                </details>
             </box>
             <box id="febtwonine" style="display: none;">
             <h3>Best of Feb 29</h3>
