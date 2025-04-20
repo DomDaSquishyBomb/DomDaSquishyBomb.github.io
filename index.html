@@ -8,6 +8,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css" type="text/css">
 
+    <style>
+      header {
+        width: min-content;
+        margin: 0;
+        padding: 0;
+        }
+      .balldemo {
+        flex-direction: row;
+      }
+      nav {
+          height: fit-content;
+          border-width:20px;
+          border-style: solid;
+          background-image: url(Graphics/wugpelt.png);
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: 118% 113%;
+          border-image: url(Graphics/furryborder1.png) 15% round;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding: 15px 10px;
+          margin: 100px 10px;
+          summary {
+              display: block;
+          }
+      }
+
+      nav a {
+          text-decoration: none;
+          color: #5c2323;
+          font-family: 'Apple Chancery', Arial, sans-serif;
+          display: block;
+          text-align: center;
+          margin: 15px 3px;
+          border-radius: 5px;
+          transition: background-color 0.3s;
+          padding: 2px;
+          &:hover {
+              background-color: #e9d3d3;
+          }
+
+        .research {
+          font-size: 90%;
+        }
+        .arts {
+          font-size: 90%;
+        }
+      }
+    </style>
+
     <script>
       /* This is a simple client-side router that loads HTML  given to me by ChatGPT. */
       const routes = {
@@ -52,12 +103,16 @@
         <a href="#home">Welcome</a>
         <a href="#research">Research</a>
         <details>
-          <summary>Arts</summary>
+          <summary><a>Arts</a></summary>
           <a href="#poetry"  style="font-size:90%">Poetry</a>
           <a href="#journal" style="font-size:90%">Journal</a>
           <a href="#music"   style="font-size:90%">Music</a>
         </details>
       </nav>
+      <figure>
+        <img src="Graphics/crystalball.png" alt="crystalball" style="width: 100%">
+      </figure>
+      
     </header>
 
     <main id="content"></main>
