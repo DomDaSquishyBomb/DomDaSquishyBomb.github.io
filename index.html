@@ -7,60 +7,59 @@
     <link rel="shortcut icon" type="image/jpg" href="Graphics/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css" type="text/css">
+
     <script>
-      function loadContent(page) {
-        fetch(page)
-          .then(response => response.text())
-          .then(html => {
-            const contentElement = document.getElementById('content');
-            contentElement.innerHTML = html;
-
-            // Find and execute scripts within the loaded content.
-            Array.from(contentElement.querySelectorAll('script')).forEach(oldScript => {
-              const newScript = document.createElement('script');
-              Array.from(oldScript.attributes).forEach(attr =>
-                newScript.setAttribute(attr.name, attr.value)
-              );
-              if (oldScript.src) {
-                newScript.src = oldScript.src;
-              } else {
-                newScript.appendChild(document.createTextNode(oldScript.innerHTML));
-              }
-              oldScript.parentNode.replaceChild(newScript, oldScript);
-            });
-          })
-          .catch(error => {
-            console.error('Error fetching content:', error);
-          });
-      }
-
-      window.onload = function() {
-        loadContent('home.html');
+      /* This is a simple client-side router that loads HTML  given to me by ChatGPT. */
+      const routes = {
+        '#home':     'home.html',
+        '#research': 'research.html',
+        '#poetry':   'poetry.html',
+        '#journal':  'journal.html',
+        '#music':    'music.html'
       };
 
-      function popUp() {
-        if (confirm("Mature Themes...Viewer Discretion is Advised")) {
-          loadContent('poetry.html');
-          display('writingsmenu');
-        } else {
-          display('writingsmenu');
+      async function loadContent(page) {
+        try {
+          const html = await fetch(page).then(r => r.text());
+          const container = document.getElementById('content');
+          container.innerHTML = html;
+
+          container.querySelectorAll('script').forEach(old => {
+            const fresh = document.createElement('script');
+            [...old.attributes].forEach(a => fresh.setAttribute(a.name, a.value));
+            fresh.text = old.text;
+            old.replaceWith(fresh);
+          });
+        } catch (err) {
+          console.error('Error fetching content:', err);
+          document.getElementById('content').textContent =
+            'Sorry — that section failed to load.';
         }
       }
+
+      function router() {
+        const page = routes[location.hash] || routes['#home'];
+        loadContent(page);
+      }
+
+      window.addEventListener('hashchange', router);
+      window.addEventListener('DOMContentLoaded', router);
     </script>
   </head>
   <body>
     <header>
       <nav>
-        <a href="#home" onclick="loadContent('home.html')">Welcome</a>
-        <a href="#research" onclick="loadContent('research.html')">Research</a>
+        <a href="#home">Welcome</a>
+        <a href="#research">Research</a>
         <details>
-            <summary><a>Arts</a></summary>
-            <a href="#poetry" onclick="loadContent('poetry.html')" style="font-size: 90%">Poetry</a>
-            <a href="#journal" onclick="loadContent('journal.html')" style="font-size: 90%" >Journal</a>
-            <a href="#music" onclick="loadContent('music.html')" style="font-size: 90%">Music</a>
+          <summary>Arts</summary>
+          <a href="#poetry"  style="font-size:90%">Poetry</a>
+          <a href="#journal" style="font-size:90%">Journal</a>
+          <a href="#music"   style="font-size:90%">Music</a>
         </details>
-     </nav>
+      </nav>
     </header>
+
     <main id="content"></main>
   </body>
 </html>
