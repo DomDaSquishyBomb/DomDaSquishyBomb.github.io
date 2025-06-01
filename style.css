@@ -10,6 +10,7 @@
 }
 html {
     width: 90%;
+    margin: 0px  30%;
     cursor: url('Graphics/defaultmouse.png'), default;
 }
 
