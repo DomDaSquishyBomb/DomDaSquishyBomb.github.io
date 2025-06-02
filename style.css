@@ -9,8 +9,7 @@
     src: url('Bookman.otf');
 }
 html {
-    width: 90%;
-    margin: 0px  30%;
+    width: 100%;
     cursor: url('Graphics/defaultmouse.png'), default;
 }
 
@@ -19,7 +18,7 @@ a, button, summary {
 }
 
 body {
-    min-width: 100%;
+    width: 800px;
     margin: auto;
     display: grid;
     height: 100vh;
