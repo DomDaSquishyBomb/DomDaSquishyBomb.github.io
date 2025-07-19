@@ -1,129 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Dominic Le's Personal Website</title>
-    <meta name="description" content="It's here and better than ever!!!!" />
-    <meta charset="UTF-8">
-    <link rel="shortcut icon" type="image/jpg" href="Graphics/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css" type="text/css">
 
-    <style>
-      header {
-        width: min-content;
-        margin: 0;
-        padding: 0;
-        }
-      nav {
-          height: fit-content;
-          border-width:20px;
-          border-style: solid;
-          background-image: url(Graphics/wugpelt.png);
-          background-position: center;
-          background-repeat: no-repeat;
-          background-size: 118% 112%;
-          border-image: url(Graphics/furryborder.png) 15% round;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          padding: 10px 10px;
-          margin: 100px 10px 10px;
-          summary {
-              display: block;
-          }
+<head>
+  <title>Dominic Le's Personal Website</title>
+  <meta name="description" content="It's here and better than ever!!!!" />
+  <meta charset="UTF-8">
+  <link rel="shortcut icon" type="image/jpg" href="Graphics/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css" type="text/css">
+
+  <style>
+    header {
+      width: min-content;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav {
+      height: fit-content;
+      border-width: 20px;
+      border-style: solid;
+      background-image: url(Graphics/wugpelt.png);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 118% 112%;
+      border-image: url(Graphics/furryborder.png) 15% round;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 10px 10px;
+      margin: 100px 10px 10px;
+
+      summary {
+        display: block;
+      }
+    }
+
+    footer {
+      border-style: dashed;
+      text-align: center;
+      height: fit-content;
+      width: 0%;
+      font-size: 0.8em;
+      color: #333;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #5c2323;
+      font-family: 'Apple Chancery', Arial, sans-serif;
+      display: block;
+      text-align: center;
+      margin: 15px 3px;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+      padding: 2px;
+
+      &:hover {
+        background-color: #e9d3d3;
       }
 
-      nav a {
-          text-decoration: none;
-          color: #5c2323;
-          font-family: 'Apple Chancery', Arial, sans-serif;
-          display: block;
-          text-align: center;
-          margin: 15px 3px;
-          border-radius: 5px;
-          transition: background-color 0.3s;
-          padding: 2px;
-          &:hover {
-              background-color: #e9d3d3;
-          }
-
-        .research {
-          font-size: 90%;
-        }
-        .arts {
-          font-size: 90%;
-        }
+      .research {
+        font-size: 90%;
       }
 
-      
-    </style>
-
-    <script>
-      /* This is a simple client-side router that loads HTML  given to me by ChatGPT. */
-      const routes = {
-        '#home':     'home.html',
-        '#about':    'about.html',
-        '#counterfactuals': 'counterfactuals.html',
-        '#research': 'research.html',
-        '#poetry':   'poetry.html',
-        '#journal':  'journal.html',
-        '#music':    'music.html',
-        '#contact':  'contact.html',
-      };
-
-      async function loadContent(page) {
-        try {
-          const html = await fetch(page).then(r => r.text());
-          const container = document.getElementById('content');
-          container.innerHTML = html;
-
-          container.querySelectorAll('script').forEach(old => {
-            const fresh = document.createElement('script');
-            [...old.attributes].forEach(a => fresh.setAttribute(a.name, a.value));
-            fresh.text = old.text;
-            old.replaceWith(fresh);
-          });
-        } catch (err) {
-          console.error('Error fetching content:', err);
-          document.getElementById('content').textContent =
-            'Sorry — that section failed to load.';
-        }
+      .arts {
+        font-size: 90%;
       }
+    }
+  </style>
 
-      function router() {
-        const page = routes[location.hash] || routes['#home'];
-        loadContent(page);
+  <script>
+    /* This is a simple client-side router that loads HTML  given to me by ChatGPT. */
+    const routes = {
+      '#home': 'home.html',
+      '#about': 'about.html',
+      '#counterfactuals': 'counterfactuals.html',
+      '#research': 'research.html',
+      '#poetry': 'poetry.html',
+      '#journal': 'journal.html',
+      '#music': 'music.html',
+      '#contact': 'contact.html',
+    };
+
+    async function loadContent(page) {
+      try {
+        const html = await fetch(page).then(r => r.text());
+        const container = document.getElementById('content');
+        container.innerHTML = html;
+
+        container.querySelectorAll('script').forEach(old => {
+          const fresh = document.createElement('script');
+          [...old.attributes].forEach(a => fresh.setAttribute(a.name, a.value));
+          fresh.text = old.text;
+          old.replaceWith(fresh);
+        });
+      } catch (err) {
+        console.error('Error fetching content:', err);
+        document.getElementById('content').textContent =
+          'Sorry — that section failed to load.';
       }
+    }
 
-      window.addEventListener('hashchange', router);
-      window.addEventListener('DOMContentLoaded', router);
-    </script>
-  </head>
-  <body>
-    <header>
-      <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <details>
-          <summary><a href="#research">Research</a></summary>
-          <a href="#counterfactuals" style="font-size:90%">CFs</a>
-        </details>
-        
-        <details>
-          <summary><a>Art</a></summary>
-          <a href="#poetry"  style="font-size:90%">Poetry</a>
-          <a href="#journal" style="font-size:90%">Journal</a>
-          <a href="#music"   style="font-size:90%">Music</a>
-        </details>
+    function router() {
+      const page = routes[location.hash] || routes['#home'];
+      loadContent(page);
+    }
 
-        <a href="#contact">Contact</a>
-      </nav>
-      <figure>
-        <img src="Graphics/crystalball.png" alt="crystalball" style="width: 100%">
-      </figure>
-      
-    </header>
+    window.addEventListener('hashchange', router);
+    window.addEventListener('DOMContentLoaded', router);
+  </script>
+</head>
 
-    <main id="content"></main>
-  </body>
+<body>
+  <header>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <details>
+        <summary><a href="#research">Research</a></summary>
+        <a href="#counterfactuals" style="font-size:90%">CFs</a>
+      </details>
+
+      <details>
+        <summary><a>Art</a></summary>
+        <a href="#poetry" style="font-size:90%">Poetry</a>
+        <a href="#journal" style="font-size:90%">Journal</a>
+        <a href="#music" style="font-size:90%">Music</a>
+      </details>
+
+      <a href="#contact">Contact</a>
+    </nav>
+    <figure>
+      <img src="Graphics/crystalball.png" alt="crystalball" style="width: 100%">
+    </figure>
+
+  </header>
+
+  <main id="content" style="width: 55vh;"></main>
+</body>
+
 </html>

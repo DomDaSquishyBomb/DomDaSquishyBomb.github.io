@@ -19,9 +19,10 @@ a, button, summary {
 
 body {
     width: 800px;
+    height: 100px;
     margin: auto;
     display: grid;
-    height: 100vh;
+    
     background-color: #f2f2f2;
     grid-template-columns: min-content auto;
 }
