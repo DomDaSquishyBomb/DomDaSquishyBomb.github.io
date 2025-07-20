@@ -10,7 +10,7 @@
 }
 html {
     cursor: url('Graphics/defaultmouse.png'), default;
-    max-width: 100%;
+    width: 100%;
 }
 
 a, button, summary {
@@ -18,7 +18,6 @@ a, button, summary {
 }
 
 body {
-
     width: 100%;
     height: 100px;
     margin: auto;
@@ -36,7 +35,7 @@ hgroup {
     font-family: 'Apple Chancery', Arial, sans-serif;
     h1 {
         margin: 0px;
-        font-size: 80px;
+        font-size: 75px;
     }
     p {
         margin-left: 10px;
