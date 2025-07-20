@@ -11,6 +11,7 @@
 html {
     cursor: url('Graphics/defaultmouse.png'), default;
     width: 100%;
+    align-items: center;
 }
 
 a, button, summary {
@@ -18,7 +19,7 @@ a, button, summary {
 }
 
 body {
-    width: 100%;
+    max-width: 800px;
     height: 100px;
     margin: auto;
     display: grid;
