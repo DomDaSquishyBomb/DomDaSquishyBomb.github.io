@@ -10,7 +10,26 @@
   <link rel="stylesheet" href="style.css" type="text/css">
 
   <style>
-    header {
+    .container {
+      display: grid;
+      grid-template-areas:
+        "menu content"
+        ".          footer";
+      grid-template-columns: 1fr 3fr;
+    }
+    .container > div.menu {
+      grid-area: menu;
+    }
+    .container > div.content {
+      grid-area: content;
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+    .container > div.footer {
+      grid-area: footer;
+    }
+
+    menu {
       width: 15vw;
       max-width: 120px;
       min-width: 100px;
@@ -39,10 +58,9 @@
     }
 
     footer {
-      border-style: dashed;
       text-align: center;
       height: fit-content;
-      width: 0%;
+      padding: 5px;
       font-size: 0.8em;
       color: #333;
     }
@@ -73,6 +91,16 @@
   </style>
 
   <script>
+    var audio = document.getElementById("myAudio");
+
+        function playAudio() {
+            audio.play();
+        }
+
+        function stopAudio() {
+            audio.pause();
+            audio.currentTime = 0; // Rewind to the beginning
+        }
     /* This is a simple client-side router that loads HTML  given to me by ChatGPT. */
     const routes = {
       '#home': 'home.html',
@@ -115,8 +143,9 @@
 </head>
 
 <body>
-  <header>
-    <nav>
+  <div class="container">
+    <div class="menu">
+      <nav>
       <a href="#home">Home</a>
       <a href="#about">About</a>
       <details>
@@ -136,14 +165,15 @@
   <figure style="align-items: center;">
       <img src="Graphics/crystalball.png" alt="crystalball" style="width: 6vw; min-width: 30px; max-width: 50px">
     </figure>
-    
-
-  </header>
-
-  <main id="content" style="margin-left: 1%; width: 74vw; max-width: 750px;">
-  </main>
-
+    </div>
+    <div class="content" id="content" style="margin-left: 1%; width: 74vw; max-width: 750px; height: 95vh;">
+      <!-- Content will be loaded here -->
+    </div>
+    <div class="footer">
+      <footer>
+        <p>&copy; 2023-5 All rights reserved.</p>
+      </footer>
+    </div>
+  </div>
 </body>
-
-
 </html>
