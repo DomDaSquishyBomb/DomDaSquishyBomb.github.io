@@ -12,6 +12,7 @@ html {
     cursor: url('Graphics/defaultmouse.png'), default;
     width: 100%;
     align-items: center;
+    overflow: hidden;
 }
 
 a, button, summary {
