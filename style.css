@@ -10,7 +10,7 @@
 }
 html {
     cursor: url('Graphics/defaultmouse.png'), default;
-    width: 99%;
+    width: 92%;
     align-items: center;
     overflow: hidden;
 }
@@ -37,7 +37,7 @@ hgroup {
     font-family: 'Apple Chancery', Arial, sans-serif;
     h1 {
         margin: 0px;
-        font-size: 75px;
+        font-size: 65px;
     }
     p {
         margin-left: 10px;
