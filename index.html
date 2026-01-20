@@ -52,17 +52,22 @@
 
 
       summary {
-        list-style: none;
+        list-style: none !important;
       }
 
       /* Firefox */
       summary::-moz-list-bullet {
-        list-style-type: none;
+        list-style-type: none !important;
       }
 
       /* Safari and Chrome */
       summary::-webkit-details-marker {
-        display: none;
+        display: none !important;
+      }
+
+      /* Additional Safari fix */
+      summary::marker {
+        display: none !important;
       }
     }
 
