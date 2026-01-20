@@ -16,15 +16,18 @@
         "menu content"
         ".          footer";
     }
-    .container > div.menu {
+
+    .container>div.menu {
       grid-area: menu;
     }
-    .container > div.content {
+
+    .container>div.content {
       grid-area: content;
       overflow-y: auto;
       overflow-x: auto;
     }
-    .container > div.footer {
+
+    .container>div.footer {
       grid-area: footer;
     }
 
@@ -49,7 +52,17 @@
 
 
       summary {
-        display: block;
+        list-style: none;
+      }
+
+      /* Firefox */
+      summary::-moz-list-bullet {
+        list-style-type: none;
+      }
+
+      /* Safari and Chrome */
+      summary::-webkit-details-marker {
+        display: none;
       }
     }
 
@@ -88,14 +101,14 @@
   <script>
     var audio = document.getElementById("myAudio");
 
-        function playAudio() {
-            audio.play();
-        }
+    function playAudio() {
+      audio.play();
+    }
 
-        function stopAudio() {
-            audio.pause();
-            audio.currentTime = 0; // Rewind to the beginning
-        }
+    function stopAudio() {
+      audio.pause();
+      audio.currentTime = 0; // Rewind to the beginning
+    }
     /* This is a simple client-side router that loads HTML  given to me by ChatGPT. */
     const routes = {
       '#home': 'home.html',
@@ -143,27 +156,27 @@
   <div class="container">
     <div class="menu">
       <nav>
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <details>
-        <summary><a href="#research">Research</a></summary>
-        <a href="#counterfactuals" style="font-size:90%">CFs</a>
-      </details>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <details>
+          <summary><a href="#research">Research</a></summary>
+          <a href="#counterfactuals" style="font-size:90%">CFs</a>
+        </details>
 
-      <details>
-        <summary><a>More</a></summary>
-        <a href="#poems" style="font-size:90%">Poems</a>
-        <a href="#blog" style="font-size:90%">Blog</a>
-        <a href="#music" style="font-size:90%">Music</a>
-        <a href="#jokes" style="font-size:90%">Jokes</a>
+        <details>
+          <summary><a>More</a></summary>
+          <a href="#poems" style="font-size:90%">Poems</a>
+          <a href="#blog" style="font-size:90%">Blog</a>
+          <a href="#music" style="font-size:90%">Music</a>
+          <a href="#jokes" style="font-size:90%">Jokes</a>
 
-      </details>
+        </details>
 
-      <a href="#contact">Contact</a>
-    </nav>
-  <figure style="align-items: center;">
-      <img src="Graphics/crystalball.png" alt="crystalball" style="width: 50px;">
-    </figure>
+        <a href="#contact">Contact</a>
+      </nav>
+      <figure style="align-items: center;">
+        <img src="Graphics/crystalball.png" alt="crystalball" style="width: 50px;">
+      </figure>
     </div>
     <div class="content" id="content" style="width: 65vw; max-width: 750px; height: 90vh;">
       <!-- Content will be loaded here -->
@@ -175,4 +188,5 @@
     </div>
   </div>
 </body>
+
 </html>
